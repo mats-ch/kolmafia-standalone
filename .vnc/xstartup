@@ -1,0 +1,3 @@
+#!/bin/bash
+exec icewm &
+exec java -jar -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true /home/kolmafia/kolmafia.jar

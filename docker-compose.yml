@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  kolmafia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kolmafia
+    container_name: kolmafia
+    restart: unless-stopped
+    ports:
+      - "6080:6080"
+      - "60080:60080"
+    volumes:
+      - /home/mats/docker/files/.kolmafia:/home/kolmafia/.kolmafia
+    networks:
+      - docker
+
+networks:
+  docker:
+    driver: bridge
