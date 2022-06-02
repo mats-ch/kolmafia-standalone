@@ -2,10 +2,7 @@ version: "3"
 
 services:
   kolmafia:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: kolmafia
+    image: matschr/kolmafia:latest
     container_name: kolmafia
     restart: unless-stopped
     ports:
