@@ -13,6 +13,7 @@ COPY kolmafia.sh /home/kolmafia/kolmafia.sh
 RUN chmod +x /home/kolmafia/kolmafia.sh
 
 RUN mkdir -p /home/kolmafia
+RUN groupadd -g 1001 kolmafia
 RUN useradd -u 1001 -g 1001 kolmafia -d /home/kolmafia
 RUN chown -R kolmafia:kolmafia /home/kolmafia
 
