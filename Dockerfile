@@ -23,7 +23,7 @@ USER kolmafia
 ENV USER kolmafia
 ENV HOME /home/kolmafia
 
-RUN curl $(curl -s https://api.github.com/repos/kolmafia/kolmafia/releases/latest | jq '.assets[] | select(.name | endswith("jar")).browser_download_url') -o /home/kolmafia/kolmafia.jar
+RUN curl -L $(curl -s https://api.github.com/repos/kolmafia/kolmafia/releases/latest | jq -r '.assets[] | select(.name | endswith("jar")).browser_download_url') -o /home/kolmafia/kolmafia.jar
 
 RUN git clone https://github.com/novnc/noVNC.git /home/kolmafia/novnc
 
