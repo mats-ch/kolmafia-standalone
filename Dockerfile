@@ -13,7 +13,8 @@ COPY kolmafia.sh /home/kolmafia/kolmafia.sh
 RUN chmod +x /home/kolmafia/kolmafia.sh
 
 RUN mkdir -p /home/kolmafia
-RUN useradd kolmafia -d /home/kolmafia
+RUN userdel ubuntu
+RUN useradd kolmafia -u 1000 -d /home/kolmafia
 RUN chown -R kolmafia:kolmafia /home/kolmafia
 
 RUN echo "kolmafia ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
