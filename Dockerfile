@@ -1,12 +1,12 @@
 # Kolmafia inside a vncserver inside docker
 
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 
 ARG VNCPASSWD=kolmafia
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
 	apt-get install \
-	openjdk-21-jre curl tightvncserver xterm icewm git nodejs jq python3-numpy -y
+	openjdk-25-jre curl tightvncserver xterm icewm git nodejs jq python3-numpy -y
 
 COPY .vnc /home/kolmafia/.vnc
 COPY kolmafia.sh /home/kolmafia/kolmafia.sh
